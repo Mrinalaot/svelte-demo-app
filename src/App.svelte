@@ -1,10 +1,15 @@
 <script>
 	export let name;
+	let library = "React"; 
+	const handleClick = () => {
+		library = library === "React" ? "Svelte" : "React";
+	}
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<p> I Love {library} </p>
+	<button on:click={handleClick}> Switch library</button>
 </main>
 
 <style>
@@ -13,6 +18,11 @@
 		padding: 1em;
 		max-width: 240px;
 		margin: 0 auto;
+	}
+
+	button {
+		color: orange;
+		border: 1px solid black;
 	}
 
 	h1 {
