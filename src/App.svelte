@@ -1,4 +1,5 @@
 <script>
+	import Modal from './Modal.svelte';
 	export let name;
 	let library = "React"; 
 	const handleClick = () => {
@@ -7,7 +8,13 @@
 	const handleChange = (e) => {
 		library = e.target.value;
 	}
+	let showModal = true;
+	const toggleModal = () => {
+		showModal = !showModal;
+	}
 </script>
+
+<Modal showModal={showModal} message="prop is working!!" isPromo={false} on:click={toggleModal}/>
 
 <main>
 	<h1>Hello {name}!</h1>
