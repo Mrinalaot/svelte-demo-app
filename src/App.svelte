@@ -4,12 +4,18 @@
 	const handleClick = () => {
 		library = library === "React" ? "Svelte" : "React";
 	}
+	const handleChange = (e) => {
+		library = e.target.value;
+	}
 </script>
 
 <main>
 	<h1>Hello {name}!</h1>
 	<p> I Love {library} </p>
 	<button on:click={handleClick}> Switch library</button>
+	<input on:input={handleChange} type="text" placeholder="Ex. One way binding"/>
+	<input bind:value={library} type="text" placeholder="Ex. Two way binding"/>
+
 </main>
 
 <style>
